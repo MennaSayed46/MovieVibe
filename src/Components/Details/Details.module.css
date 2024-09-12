@@ -1,0 +1,33 @@
+.title {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 35px;
+    color: white;
+}
+
+.type {
+    border: 1px solid white;
+
+}
+
+.similiar {
+    background-image: linear-gradient(rgb(164, 0, 0) 70%, white 30%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+.top{
+    border: 1px solid #2e2e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 10%;
+    right: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #121212;
+
+}

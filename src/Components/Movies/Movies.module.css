@@ -1,0 +1,13 @@
+.movies {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 35px;
+    color: white;
+}
+
+.movies {
+    background-image: linear-gradient(rgb(164, 0, 0) 65%, white 35%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
