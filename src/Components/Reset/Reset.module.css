@@ -1,0 +1,10 @@
+.title {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 35px;
+    color: white;
+    background-image: linear-gradient(#dc2626 60%, white 30%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

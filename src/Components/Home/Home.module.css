@@ -1,0 +1,36 @@
+.top {
+    border: 1px solid #2e2e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 10%;
+    right: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #121212;
+
+}
+
+.online {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 35px;
+    background-image: linear-gradient(rgb(164, 0, 0) 65%, white 35%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.watch{
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 35px;
+  color: white;
+}
+.movies{
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 35px;
+ color: white;
+}
