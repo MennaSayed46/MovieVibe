@@ -25,7 +25,7 @@ import UserContextProvider from './Context/UserContext'
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'
 import Forget from './Components/Forget/Forget'
 import Reset from './Components/Reset/Reset'
-import NewPass from './Components/newPass/newPass'
+import NewPass from './Components/NewPass/NewPass'
 import Notfound from './Components/Notfound/Notfound';
 
 
