@@ -13,10 +13,7 @@ export default function NewPass() {
 
   let validationSchema = Yup.object().shape({
     email: Yup.string().email('email is invalid').required('email is required'),
-    newPassword: Yup.string().matches(/^[A-Za-z][A-Za-z0-9]{5,15}$/, `must be
-* Start with a letter .
-* Be between 5 and 15 characters totally.
-* Can only contain letters (A-Z or a-z) and numbers (0-9)`).required('password is required'),
+    newPassword: Yup.string().matches(/^.{5,}$/, 'password is invalid').required('password is required'),
   });
 
 
