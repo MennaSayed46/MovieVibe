@@ -38,7 +38,7 @@ export default function Register() {
   let validationSchema = yup.object().shape({
     name: yup.string().min(3, 'min length is 3').max(10, 'max length is 10').required('the name is required'),
     email: yup.string().email('email is invalid').required('email is required'),
-    password: yup.string().matches(/^[A-Z]\w{5,15}$/, 'password is invalid').required('password is required'),
+    password: yup.string().matches(/^.{5,}$/, 'password is invalid').required('password is required'),
     rePassword: yup.string().oneOf([yup.ref('password')], 'Passwords must match').required('repassword is required'),
     phone: yup.string().matches(/^01[0-2,5]{1}[0-9]{8}$/, 'Invalid phone number').required('phone is required')
   });
