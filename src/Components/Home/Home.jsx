@@ -38,7 +38,7 @@ export default function Home() {
           minHeight: '400px',
           backgroundAttachment: 'fixed'
         }}>
-          <div className='absolute right-0 h-full w-1/4 my-16 sm:py-0 md:py-16 capitalize'>
+          <div className='absolute right-0 h-full w-1/4 my-16 sm:py-0 md:py-16 capitalize md:visible invisible'>
             <p className={`${style.watch}`}>Watch <span className={`${style.online}`}>Online</span> </p>
             <p><span className={`${style.movies}`}>Movies and </span></p>
             <p><span className={`${style.movies}`}>series </span></p>
