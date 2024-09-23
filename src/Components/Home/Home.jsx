@@ -4,8 +4,22 @@ import Series from '../Series/Series';
 import Movies from '../Movies/Movies';
 import mainImg from '../../assets/achtergrond_mededeling.jpg';
 import Search from '../Search/Search';
+import Slider from 'react-slick';
+import { Link, useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+
+import { EffectCards } from 'swiper/modules';
+import { EffectCoverflow, Pagination } from 'swiper/modules';
+import Loading from '../Loading/Loading';
 
 export default function Home() {
+ 
+
+
+
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
@@ -27,9 +41,12 @@ export default function Home() {
 
   };
 
+
+
   return (
     <>
-      <div className='home-page'>
+
+      <div className='home-page w-full overflow-x-hidden'>
         <div className="main-page " style={{
           backgroundImage: `url(${mainImg})`,
           backgroundSize: 'cover',
@@ -38,7 +55,7 @@ export default function Home() {
           minHeight: '400px',
           backgroundAttachment: 'fixed'
         }}>
-          <div className='absolute right-0 h-full w-1/4 my-16 sm:py-0 md:py-16 capitalize'>
+          <div className='absolute right-0 h-full w-1/4 my-16 sm:py-0 md:py-16 capitalize md:visible invisible'>
             <p className={`${style.watch}`}>Watch <span className={`${style.online}`}>Online</span> </p>
             <p><span className={`${style.movies}`}>Movies and </span></p>
             <p><span className={`${style.movies}`}>series </span></p>
@@ -57,6 +74,7 @@ export default function Home() {
           </div>
         )}
       </div>
+
     </>
   );
 }

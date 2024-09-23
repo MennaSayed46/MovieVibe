@@ -27,6 +27,7 @@ import Forget from './Components/Forget/Forget'
 import Reset from './Components/Reset/Reset'
 import NewPass from './Components/newPass/newPass'
 import Notfound from './Components/Notfound/Notfound';
+import SearchResult from './Components/SearchResult/SearchResult'
 
 
 
@@ -39,12 +40,13 @@ function App() {
       path: '/', element: <Layout></Layout>, children: [
         { index: true, element: <ProtectedRoute><Home /></ProtectedRoute> },
         { path: 'home', element: <ProtectedRoute><Home /></ProtectedRoute> },
-        { path: 'movies', element:<ProtectedRoute> <Movies /></ProtectedRoute> },
+        { path: 'movies', element: <ProtectedRoute> <Movies /></ProtectedRoute> },
+        { path: 'results', element: <ProtectedRoute> <SearchResult /></ProtectedRoute> },
         { path: 'register', element: <Register /> },
         { path: 'login', element: <Login /> },
         { path: 'forget', element: <Forget /> },
         { path: 'newPass', element: <NewPass /> },
-       
+
         { path: 'reset', element: <Reset /> },
         { path: 'series', element: <ProtectedRoute><Series /></ProtectedRoute> },
         { path: 'details/:id', element: <ProtectedRoute><Details /></ProtectedRoute> },
@@ -63,7 +65,7 @@ function App() {
     <>
       <UserContextProvider>
         <RouterProvider router={routers}>
-          
+
         </RouterProvider>
 
       </UserContextProvider>

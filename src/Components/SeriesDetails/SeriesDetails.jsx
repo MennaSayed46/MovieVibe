@@ -265,7 +265,7 @@ export default function SeriesDetails() {
                   />
                   <p>{similarSeries.name}</p>
                   
-                  <p className={`bg-transparent border-red-600 border-2 rounded-xl hover:bg-red-600 hover:border-transparent flex items-center justify-center ${style.rate}`}> Rating :{similarSeries.vote_average}</p>
+                  <p className={`bg-transparent border-red-600 border-2 rounded-xl hover:bg-red-600 hover:border-transparent flex items-center justify-center ${style.rate}`}> Rating :{Math.floor(similarSeries.vote_average)}</p>
 
                 </SwiperSlide>
 

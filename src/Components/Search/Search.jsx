@@ -5,27 +5,35 @@ import style from './Search.module.css';
 
 export default function Search() {
   const [query, setQuery] = useState(''); //serchTerm Value
-  const [results, setResults] = useState([]);  
+  const [results, setResults] = useState([]);
 
   const handleSearch = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     try {
       const options = {
         method: 'GET',
         url: `https://api.themoviedb.org/3/search/multi?include_adult=false&language=en-US&page=1&query=${query}`,
         headers: {
           accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OGNlZGQxZGNkNTljMWU4NzYzNzFiOWFjMmJjMTczZCIsIm5iZiI6MTcyNjA1MTAxMi4yMTY2MTIsInN1YiI6IjY2OTk0YjA4ZGQ5YTgyNjk1MWMxODZmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Ctyxm3cmcQoMxGe6KxGuUyLJEN3BWicz_-eKa5Zqepg' 
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OGNlZGQxZGNkNTljMWU4NzYzNzFiOWFjMmJjMTczZCIsIm5iZiI6MTcyNjA1MTAxMi4yMTY2MTIsInN1YiI6IjY2OTk0YjA4ZGQ5YTgyNjk1MWMxODZmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Ctyxm3cmcQoMxGe6KxGuUyLJEN3BWicz_-eKa5Zqepg'
         }
       };
       const response = await axios.request(options);
-      console.log('Search response:', response.data); 
-      setResults(response.data.results); 
+      console.log('Search response:', response.data.results);
+      setResults(response.data.results);
+
       localStorage.setItem('searchResults', JSON.stringify(response.data.results));
+      localStorage.setItem('query', query);
+
+      console.log('Data stored in localStorage:', {
+        results: response.data.results,
+        query: query
+      });
     } catch (error) {
       console.log('Error fetching search results:', error);
     }
   };
+
 
   return (
     <>
@@ -44,7 +52,7 @@ export default function Search() {
               className="bg-black border p-2 border-white text-white text-sm rounded-lg block w-full ps-10"
               placeholder="Search for movies, series, etc..."
               value={query}
-              onChange={(e) => setQuery(e.target.value)} 
+              onChange={(e) => setQuery(e.target.value)}
               required
             />
           </div>
@@ -59,7 +67,7 @@ export default function Search() {
           </button>
         </form>
 
-       
+
       </div>
     </>
   );
